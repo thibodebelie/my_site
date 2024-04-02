@@ -5,10 +5,11 @@
     export let data;
 </script>
 
-
 <Header/>
+
 
 <slot><!-- optional fallback --></slot>
 
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>.
 <Footer/>

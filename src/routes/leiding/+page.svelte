@@ -11,9 +11,9 @@
 <Header/>
 
 <div class="container">
-    <h1><a href="..\groepen\miniMin">Mini-Min</a></h1>
+    <h1><a href="..\miniMin">Mini-Min</a></h1>
     <div class="mini-Min">
-        <a href="..\groepen\miniMin">
+        <a href="..\miniMin">
         <div class ="image-box">
             <img src="src\images\mini-min_leiding.jpg" alt="mini-Min leiding">
         </div>
