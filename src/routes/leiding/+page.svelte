@@ -11,7 +11,7 @@
 <Header/>
 
 <div class="container">
-    <h1>Mini-Min</h1>
+    <h1><a href="..\groepen\miniMin">Mini-Min</a></h1>
     <div class="mini-Min">
         <a href="..\groepen\miniMin">
         <div class ="image-box">
@@ -27,9 +27,9 @@
     </a>
     </div>
 
-    <h1>Maxi-Min</h1>
+    <h1><a href="..\groepen\maxiMin">Maxi-min</a></h1>
     <div class="mini-Min">
-        <a href="..\groepen\miniMin">
+        <a href="..\groepen\maxiMin">
         <div class ="image-box">
             <img src="src\images\maxi-min_leiding.jpg" alt="mini-Min leiding">
         </div>
@@ -43,9 +43,9 @@
     </a>
     </div>
 
-    <h1>Tussers</h1>
+    <h1><a href="..\groepen\tussers">Tussers</a></h1>
     <div class="mini-Min">
-        <a href="..\groepen\miniMin">
+        <a href="..\groepen\tussers">
         <div class ="image-box">
             <img src="src\images\tussers_leiding.jpeg" alt="mini-Min leiding">
         </div>
@@ -59,9 +59,9 @@
     </a>
     </div>
 
-    <h1>Hoofdleiding</h1>
+    <h1><a href="..\groepen\hoofdleiding" >Hoofdleiding</a></h1>
     <div class="mini-Min">
-        <a href="..\groepen\miniMin">
+        <a href="..\groepen\hoofdleiding">
         <div class ="image-box">
             <img src="src\images\Hoofdleiding.jpg" alt="mini-Min leiding">
         </div>
