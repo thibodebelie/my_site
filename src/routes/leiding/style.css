@@ -1,0 +1,176 @@
+/*.container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    margin: auto;
+}
+.container h1{
+    font-size: 40px;
+    color: #38AD34;
+    text-shadow: #81b47f 2px 2px 2px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.mini-Min{
+    width: 400px;
+    height: calc(200px / 0.7);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.mini-Min a{
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.mini-Min:hover a{
+    z-index: 2;
+}
+
+.mini-Min .image-box{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.mini-Min .image-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: inherit;
+    transition: 0.5s ease-in-out;
+}
+
+.mini-Min::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgb(233,43,43);
+    border-radius: inherit;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+}
+
+.mini-Min:hover img{
+    filter: grayscale(1) brightness(0.4);
+}
+.mini-Min:hover::after{
+    opacity: 1;
+    inset: 20px;
+}
+
+.content{
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+}
+
+.mini-Min:hover .content{
+    opacity: 1;
+    color: #38AD34;
+    transition: 0.5s ease-in-out;
+}
+
+@media screen {
+    
+}
+*/
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%; /* Adjusted for responsiveness */
+    margin: auto;
+    max-width: 800px; /* Added max-width for larger screens */
+}
+
+.container h1 {
+    font-size: min(4vw,45px); /* Adjusted font size to be responsive */
+    color: #38AD34;
+    text-shadow: #81b47f 2px 2px 2px;
+    margin: 0;
+    padding: 0;
+}
+
+.mini-Min {
+    max-width: 400px;
+    max-height:300px ;
+    width: 100%; /* Adjusted for responsiveness */
+    height: auto; /* Adjusted for responsiveness */
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    margin-top: 2vw; /* Adjusted margin for responsiveness */
+    margin-bottom: 4vw; /* Adjusted margin for responsiveness */
+}
+
+.mini-Min a {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.mini-Min .image-box {
+    width: 100%;
+    height: auto; /* Adjusted for responsiveness */
+    border-radius: inherit;
+}
+
+.mini-Min .image-box img {
+    max-width: 400px;
+    max-height:300px ;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: inherit;
+    transition: 0.5s ease-in-out;
+}
+
+.mini-Min::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgb(233, 43, 43);
+    border-radius: inherit;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+}
+
+.mini-Min:hover img {
+    filter: grayscale(1) brightness(0.4);
+}
+
+.mini-Min:hover::after {
+    opacity: 1;
+    inset: 20px;
+}
+
+.content {
+    width: 80%; /* Adjusted for responsiveness */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+}
+
+.mini-Min:hover .content {
+    opacity: 1;
+    color: #38AD34;
+    transition: 0.5s ease-in-out;
+}
