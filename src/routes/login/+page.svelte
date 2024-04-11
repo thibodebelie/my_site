@@ -2,9 +2,9 @@
     /** @type {import('./$types').PageData} */
     export let data;
 </script>
-<h1>Login</h1>
+<h1>Log in</h1>
 	<form action="" class="auth-form">
-		<label for=""> Email </label>
+		<label for=""> E-mail </label>
 		<input type="text" name="email" />
 		<label for=""> Password </label>
 		<input type="password" name="password" />

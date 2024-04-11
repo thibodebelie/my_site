@@ -1,8 +1,8 @@
-import { loadFlash } from 'sveltekit-flash-message/server';
-import { redirect } from '@sveltejs/kit';
+import { supabase } from "$lib/supabaseClient";
 
-export const load = loadFlash(async (event) => {
-  const data = { someOther: 'data' };
-  redirect(302, '/home');
-  return data;
-});
+export async function load() {
+  const { data } = await supabase.from("gegevens").select();
+  return {
+    gegevens: data ?? [],
+  };
+}

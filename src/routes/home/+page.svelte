@@ -16,5 +16,31 @@
         De gegevens zijn ook op de website te vinden. 
     </p>
     </article>    
-    <img class="groepsfoto" src="src\Groepsfoto.jpg" alt="groepsfoto" style="width: 80%;">
+    <img class="groepsfoto" src="src\images\Groepsfoto.jpg" alt="groepsfoto" style="width: 80%;">
 </div>
+
+
+<div class="extraInfo">
+    <h1> Wie zijn we ?</h1>
+    <p> Wij zijn een superleuke en levendige jeugdbeweging voor meisjes vanaf 6 jaar totdat ze oud genoeg zijn om onze leidingsgroep te versterken. 
+        De leiding voorziet elke week een activiteit voor haar groep op het jeugdheem. 
+        Ons activiteitenaanbod varieert van pleinspelen tot tochten, wandelen, zwemmen, een quiz spelen, kookactiviteiten, ruige spelen, 
+        bosspelen, stadsspelen, feestjes, relaxavonden, filmavonden, een leuk kamp en nog zooooo veel meer! 
+        Af en toe doen we ook wel eens een vettige activiteit, dus doe zeker <b>niet</b> je beste kleren aan naar de KLJ!
+    </p>
+    <p>
+        We hebben verschillende groepen binnen onze KLJ: <br>
+        - De mini-min: 1ste tot 3de leerjaar <br>
+        - De maxi-min: 4de tot 6de leerjaar <br>
+        - De tussers: 1ste en 2de middelbaar <br>
+        - De plussers: vanaf het 3de middelbaar <br>
+        - Vanaf het 5de middelbaar geven we de mogelijkheid om aspi te worden. 
+            Leden kunnen er dan voor kiezen om al een beetje te proeven van het leidingsleven en 
+            kunnen ondertussen ook nog meedoen met de activiteiten.
+    </p>
+    <img class="extraFoto" src="src\images\extraInfo.jpg" alt="extraFoto" style="width: 80%;">
+
+</div>
+<br>
+<br><br>
+

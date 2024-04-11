@@ -73,6 +73,7 @@
 </style>
   
 <Header/>
+
 <ul>
     {#each data.post as { datum, begin, einde, activiteit, locatie }}
     <li>

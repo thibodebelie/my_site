@@ -97,3 +97,9 @@
     color: rgb(233, 43, 43);
     transition: 0.3s ease-in-out;
 }
+
+.container .plussers {
+    font-size: min(2.5vw, 35px); 
+    color: #4b4c4d; 
+    margin: 0px;
+}

@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="src\components\header.css">
-
 <div class="header-basic">
     <header>
         <div class="hoofd">
@@ -9,7 +8,18 @@
                 <li class="list-inline-item"><a href="../leiding">Groepen</a></li>
                 <li class="list-inline-item"><a href="../kamp">Kamp</a></li>
                 <li class="list-inline-item"> <a href="../contact">Contact</a></li>
-                <li class="list-inline-item"><a href="../login">Login</a></li>
+                <li class="list-inline-item">
+                    <div class="dropdown">
+                        <button class="dropbtn">Meer</button>
+                        <div class="dropdown-content">
+                            <a href="../documenten">Documenten</a>
+                            <a href="../activiteiten">Activiteiten</a>
+                            <a href="../toevoegen">Toevoegen</a>
+                            <a href="../login">Log in</a>
+                            <a href="">Log out</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
         <h1 class="header">KLJ meisjes Hamont</h1>

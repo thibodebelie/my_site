@@ -5,6 +5,8 @@
 </script>
 <link rel="stylesheet" href="src\components\header.css">
 
+<!-- Dit is de layout van de homepage -->
+
 <Header/>
 
 <slot><!-- optional fallback --></slot>

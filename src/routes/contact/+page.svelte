@@ -14,7 +14,7 @@
 
 
     <!-- Verander email naar een nieuwe email die voor dit project gemaakt zal worden-->
-    <form id="formContact" action="https://formsubmit.co/thibo.debelie@hotmail.com" method="POST"> 
+    <form id="formContact"> 
         Naam: <br/>
         <input type="text" id="naam" class="input"> <br/>
         Voornaam: <br/>

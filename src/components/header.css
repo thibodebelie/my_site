@@ -1,8 +1,4 @@
 .header-basic {
-    /*position: fixed;
-    bottom: 0;
-    width: 100%;
-    */
     padding:0px;
     background-color:#ffffff;
     color:#4b4c4d;
@@ -78,23 +74,97 @@
     opacity:0.9;
   }
 
-  @media screen and (max-width: 452px) {
+  /* Dropdown Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0 0.5em; 
+}
+
+.dropbtn:hover {
+  color: red;
+  opacity: 1;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #38AD34;
+  min-width: 100%;
+  width: auto; 
+  z-index: 1;
+  font-size: 100%; 
+}
+
+.dropdown-content a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+  display: block;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem; 
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: red;
+  opacity: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+
+  @media screen and (max-width: 530px) {
     .header-basic{
-      font-size: 0.8rem; /* Adjust the font size as needed */
+      font-size: 0.8rem; /
     }
     .list-inline-item{
         font-size:0.8rem ;
     }
+    .dropbtn{
+      font-size: 0.8rem;
+    }
+    .dropdown-content{
+      font-size: 0.8rem;
+    }
+    .dropdown-content a{
+      font-size: 0.8rem;
+    }
   }
 
-  @media screen and (max-width: 389px) {
+  @media screen and (max-width: 436px) {
     .header-basic{
-      font-size: 0.5rem; /* Adjust the font size as needed */
+      font-size: 0.5rem; 
     }
     .list-inline-item{
         font-size:0.5rem ;
     }
+    .dropbtn{
+      font-size: 0.5rem;
+    }
+    .dropdown-content{
+      font-size: 0.5rem;
+    }
+    .dropdown-content a{
+      font-size: 0.5rem;
+    }
   }
-
-
   

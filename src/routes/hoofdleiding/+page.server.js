@@ -1,5 +1,5 @@
 export async function load({ params , locals: { supabase }}) {
-    const { data, error } = await supabase.from("activiteiten").select().eq('groep','Mini-Min');
+    const { data, error } = await supabase.from("activiteiten").select().eq('groep','Hoofdleiding');
   
     if (error) {
       console.error(error);
