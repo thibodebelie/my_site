@@ -18,6 +18,9 @@
             <a href="http://kljhamontjongens.be/" target="_blank" class="klj_jongens">
                 <img src="src\images\klj_jongens.png" alt="klj_jongens">
             </a>
+            <a href="mailto:kljmeisjeshamont@gmail.com" target="_blank" class="kgmail">
+                <img src="src\images\gmail.png" alt="gmail">
+            </a>
 
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="../home">Home</a></li>

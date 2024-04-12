@@ -1,0 +1,8 @@
+fix header
+
+login lid/leiding
+    ==> toegang tot andere paginas
+
+kamp inschrijven
+
+responisve controleren 

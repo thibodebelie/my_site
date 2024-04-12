@@ -6,7 +6,15 @@
                 <li class="list-inline-item"><img src="src\images\klj_meisjes.png" alt="klj_meisjes"></li>
                 <li class="list-inline-item"><a href="../home">Home</a></li>
                 <li class="list-inline-item"><a href="../leiding">Groepen</a></li>
-                <li class="list-inline-item"><a href="../kamp">Kamp</a></li>
+                <li class="list-inline-item">
+                    <div class="dropdown">
+                        <button class="dropbtn">Groepen</button>
+                        <div class="dropdown-content">
+                            <a href="../kamp">Info</a>
+                            <a href="../inschrijven">Inschrijven</a>
+                        </div>
+                    </div>
+                </li>
                 <li class="list-inline-item"> <a href="../contact">Contact</a></li>
                 <li class="list-inline-item">
                     <div class="dropdown">

@@ -2,31 +2,22 @@
 	import { supabase } from './../../lib/supabaseClient.js';
 	import Footer from './../../components/footer.svelte';
 	import Header from './../../components/header.svelte';
-  
-  export let data
+    export let data;
 
-  const groupedData = {};
-  data.post.forEach(item => {
-    if (!groupedData[item.groep]) {
-      groupedData[item.groep] = [];
-    }
-    groupedData[item.groep].push(item);
-  });
-
-  async function deleteVraag(id) {
-        const { error } = await supabase.from("activiteiten").delete().eq("id", id);
+    async function deleteVraag(id) {
+        const { error } = await supabase.from("contact").delete().eq("id", id);
         if (error) {
             console.error("Error deleting data:", error);
         } else {
             console.log("Data deleted successfully!");
-            window.alert("De activiteit is met succes verwijderd.")
+            window.alert("De beantwoorde vraag is met succes verwijderd.")
         }
     }
     let providedId =""
-
 </script>
+
 <style>
-  button {
+button {
  outline: none;
  cursor: pointer;
  border: none;
@@ -79,6 +70,21 @@ button:hover::before {
  transform: translate3d(100%, 0, 0);
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  
+li {
+    margin-bottom: 20px;
+    border: 1px solid #38AD34;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+    
 .verwijder {
     margin-bottom: 20px;
     border: 1px solid #38AD34;
@@ -110,111 +116,106 @@ input[type="number"] {
     width: 10%;
     min-width: 160px; 
 }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  li {
-    margin-bottom: 20px;
-    border: 1px solid #38AD34;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .info {
+  
+.info {
     width: calc(100% / 3);
-  }
-
-  p {
+}
+  
+p {
     margin: 0;
     font-size: 16px;
     color: black;
-  }
-
-  .activiteit {
+}
+  
+.activiteit {
     margin-bottom: 10px;
-  }
-
-  .highlight {
+}
+  
+.highlight {
     color: rgb(233, 43, 43);
     font-weight: bold;
-  }
-
-  .activiteit {
+}
+  
+.activiteit {
     margin-bottom: 10px;
     width: 50%;
     margin-top: 5px;
     margin-bottom: 10px;
-  }
-
-  .locatie {
+}
+  
+.locatie {
     width: 100%;
-    margin-bottom: 5px;
-  }
-
-  .data {
+}
+  
+.data {
     display: block;
-  }
-
-  @media screen and (max-width: 450px) {
+}
+  
+@media screen and (max-width: 450px) {
     .info {
-      width: 100%;
+        width: 100%;
     }
-
+  
     .highlight,
     .data {
-      display: block;
-      width: 100%;
+        display: block;
+        width: 100%;
     }
-  }
-
-  @media screen and (min-width: 451px) {
+}
+  
+@media screen and (min-width: 451px) {
     .data {
-      display: inline;
+        display: inline;
     }
-  }
+}
 </style>
-
+  
 
 <Header/>
 <div class="verwijder"> 
-  <p class="text">Verwijder één van de onderstaande activiteiten aan de hand van de id.</p>
-  <div class="input-group">
-      <input type="number" bind:value={providedId} placeholder="Voer de id van de activiteit in." />
-      <button on:click={() => deleteVraag(providedId)}><span>Verwijder</span></button>
-  </div>
+    <p class="text">Verwijder één van de onderstaande vragen aan de hand van de id.</p>
+    <div class="input-group">
+        <input type="number" bind:value={providedId} placeholder="Voer de id van de vraag in." />
+        <button on:click={() => deleteVraag(providedId)}><span>Verwijder</span></button>
+    </div>
 </div>
 
-{#each Object.keys(groupedData) as groep}
-  <h2>{groep}</h2>
-  <ul>
-    {#each groupedData[groep] as { datum, begin, einde, activiteit, locatie , id}}
-      <li>
+
+<ul>
+{#each data.post as {id,naam,voornaam,email, bericht , nummer}}
+     <li>
+
 
         <p class="info">
-          <span class="highlight">Datum: </span>
-          <span class="data">{datum}</span>
+            <span class="highlight">Id: </span>
+            <span class="data">{id}: </span> <br>
+            
         </p>
         <p class="info">
-          <span class="highlight">Begin: </span>
-          <span class="data">{begin}</span>
+            <span class="highlight">Naam: </span>
+            <span class="data">{naam}: </span>
         </p>
         <p class="info">
-          <span class="highlight">Einde: </span>
-          <span class="data">{einde}</span>
+            <span class="highlight" >Vooraam: </span>
+            <span class="data">{voornaam}</span>
         </p>
-        <p class="activiteit">Activiteit: {activiteit}</p>
-        <p class="locatie">Locatie: {locatie}</p>
-        <p class="id">Id: {id}</p>
-      </li>
-    {/each}
-  </ul>
+        <p class="info">
+            <span class="highlight">E-mail: </span>
+            <span class="data">{email}</span>
+        </p>
+        <p class="info">
+            <span class="highlight">Nummer: </span>
+            <span class="data">{nummer}</span>
+        </p>
+        <p class="info">
+            <span class="highlight">Bericht:</span>
+            <span class="data">{bericht}</span> 
+        </p>
+
+
+     </li>
 {/each}
+</ul>
 
 
 <Footer/>
