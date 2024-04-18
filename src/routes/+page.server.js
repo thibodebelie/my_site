@@ -1,8 +1,7 @@
 import { supabase } from "$lib/supabaseClient";
+import { redirect } from "@sveltejs/kit";
 
 export async function load() {
-  const { data } = await supabase.from("gegevens").select();
-  return {
-    gegevens: data ?? [],
-  };
+  redirect(302 , '/home')
 }
+

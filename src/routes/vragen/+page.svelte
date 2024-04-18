@@ -1,19 +1,27 @@
 <script>
-	import { supabase } from './../../lib/supabaseClient.js';
 	import Footer from './../../components/footer.svelte';
 	import Header from './../../components/header.svelte';
     export let data;
 
-    async function deleteVraag(id) {
-        const { error } = await supabase.from("contact").delete().eq("id", id);
-        if (error) {
-            console.error("Error deleting data:", error);
-        } else {
-            console.log("Data deleted successfully!");
-            window.alert("De beantwoorde vraag is met succes verwijderd.")
-        }
-    }
     let providedId =""
+
+    async function deleteVraag() {
+        let formData = new FormData();
+        formData.append( "id" , providedId);
+        const response = await fetch ("?/deleteVraag" , {
+            method:"POST",
+            body: formData
+        })
+
+        if (response.ok){
+            location.reload();
+
+        }
+        
+    }
+
+
+
 </script>
 
 <style>
@@ -172,6 +180,7 @@ p {
   
 
 <Header/>
+
 <div class="verwijder"> 
     <p class="text">Verwijder één van de onderstaande vragen aan de hand van de id.</p>
     <div class="input-group">

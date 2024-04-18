@@ -1,5 +1,4 @@
 <script>
-	import { supabase } from './../../lib/supabaseClient.js';
 	import Footer from './../../components/footer.svelte';
 	import Header from './../../components/header.svelte';
   
@@ -21,6 +20,7 @@
             console.log("Data deleted successfully!");
             window.alert("De activiteit is met succes verwijderd.")
         }
+        window.location.reload();
     }
     let providedId =""
 

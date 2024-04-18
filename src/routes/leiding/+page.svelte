@@ -2,6 +2,7 @@
 	import Header from './../../components/header.svelte';
 	import Footer from './../../components/footer.svelte';
     /** @type {import('./$types').PageData} */
+    import {goto} from '$app/navigation'
     export let data;
 </script>
 
@@ -9,13 +10,14 @@
 
 
 <Header/>
-
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="container">
     <h1><a href="..\miniMin">Mini-Min</a></h1>
-    <div class="mini-Min">
-        <a href="..\miniMin">
+
+    <div class="mini-Min" on:click={() => {goto('miniMin')}}>
         <div class ="image-box">
-            <img src="src\images\mini-min_leiding.jpg" alt="mini-Min leiding">
+            <img src="src\images\mini-min_leiding.jpg" alt="mini-Min leiding" >
         </div>
 
         <div class="content">
@@ -24,12 +26,11 @@
                 1ste - 3de studiejaar    
             </p>
         </div>
-    </a>
+    
     </div>
 
     <h1><a href="..\maxiMin">Maxi-min</a></h1>
-    <div class="mini-Min">
-        <a href="..\maxiMin">
+    <div class="mini-Min" on:click={() => {goto('maxiMin')}}>
         <div class ="image-box">
             <img src="src\images\maxi-min_leiding.jpg" alt="mini-Min leiding">
         </div>
@@ -40,12 +41,11 @@
                 4de - 6de studiejaar    
             </p>
         </div>
-    </a>
+    
     </div>
 
     <h1><a href="..\tussers">Tussers</a></h1>
-    <div class="mini-Min">
-        <a href="..\tussers">
+    <div class="mini-Min" on:click={() => {goto('tussers')}}>
         <div class ="image-box">
             <img src="src\images\tussers_leiding.jpeg" alt="mini-Min leiding">
         </div>
@@ -56,13 +56,11 @@
                 1ste - 4de middelbaar    
             </p>
         </div>
-    </a>
     </div>
 
     <h1><a href="..\hoofdleiding" >Hoofdleiding</a></h1>
     <p class="plussers" >Leiding van de Plussers </p> 
-    <div class="mini-Min">
-        <a href="..\hoofdleiding">  
+    <div class="mini-Min" on:click={() => {goto('hoofdleiding')}}>
         <div class ="image-box">
             <img src="src\images\Hoofdleiding.jpg" alt="mini-Min leiding">
         </div>
@@ -72,7 +70,6 @@
             <p>Jelke, Nele <br>
             </p>
         </div>
-    </a>
     </div>
 
 

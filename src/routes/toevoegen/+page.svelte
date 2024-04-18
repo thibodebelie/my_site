@@ -1,7 +1,8 @@
 <script>
-	import { supabase } from './../../lib/supabaseClient.js';
+	import { onMount } from 'svelte';
 	import Footer from './../../components/footer.svelte';
 	import Header from './../../components/header.svelte';
+    import { goto } from '$app/navigation';
     /** @type {import('./$types').PageData} */
     export let data;
     
@@ -14,31 +15,43 @@
     let locatieInput = "" 
     let groepInput = ""
 
+    
 
-    const handleSubmit = async ()=> {
-        event.preventDefault();
+    async function addData(){
+        let formData = new FormData();
+        formData.append("datum",datumInput);
+        formData.append("begin",beginInput);
+        formData.append("einde",eindeInput);
+        formData.append("activiteit",activiteitInput);
+        formData.append("locatie",locatieInput);
+        formData.append("groep",groepInput);
 
-        const {data , error} = await supabase.from("activiteiten").insert([
-            {   
-                datum: datumInput,
-                begin: beginInput,
-                einde: eindeInput,
-                activiteit: activiteitInput, 
-                locatie: locatieInput,
-                groep: groepInput 
-            }]);
-            if (error) {
-            console.error("Error inserting data:", error);
-            } else {
-            console.log("Data inserted successfully:", data);
-            }    
-    } 
+        const responce = await fetch("?/addData",{
+            method: "POST",
+            body: formData
+        })
+    }
+
+    const isLeider = data.user.user_metadata.leider 
+    console.log(isLeider == "false")
+    onMount(() =>{
+        if(isLeider == "false"){
+            goto("/login")
+        }
+    })
+
+    /*
+        Path uit page halen
+        
+    */
+    
+    
     
 </script>
 
 <Header/>
 <br/><br/><br/><br/><br/>
-<form on:submit|preventDefault={handleSubmit} action="">
+<form >
     <input type="date"  name="datum"        placeholder="Datum"         bind:value={datumInput}> <br/> <br/>
     <input type="time"  name="begin"        placeholder="Beginuur"      bind:value={beginInput}>
     <input type="time"  name="einde"        placeholder="Einduur"       bind:value={eindeInput}> <br/>
@@ -50,7 +63,7 @@
         <option value="Tussers">Tussers</option>
         <option value="Hoofdleiding">Hoofdleiding</option>
     </select>
-    <button type="submit">Activiteit Toevoegen</button> <br/>
+    <button on:click={() =>addData()}>Activiteit Toevoegen</button> <br/>
 </form>
 <br/><br/><br/><br/><br/>
 <Footer/>

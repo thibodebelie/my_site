@@ -1,6 +1,8 @@
 <script>
     /** @type {import('./$types').PageData} */
     export let data;
+
+    console.log(data.user)
 </script>
 
 <link rel="stylesheet" href="src\routes\home\home.css">
