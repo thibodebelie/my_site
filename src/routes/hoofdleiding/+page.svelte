@@ -1,98 +1,24 @@
 <script>
-	import Footer from './../../components/footer.svelte';
-	import Header from './../../components/header.svelte';
-    export let data
+  export let data
 </script>
-<style>
-    ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-  
-    li {
-      margin-bottom: 20px;
-      border: 1px solid #38AD34;
-      padding: 10px;
-      border-radius: 5px;
-      display: flex;
-      flex-wrap: wrap;
-    }
-  
-    .info {
-      width: calc(100% / 3);
-    }
-  
-    p {
-      margin: 0;
-      font-size: 16px;
-      color: black;
-    }
-  
-    .activiteit {
-      margin-bottom: 10px;
-    }
-  
-    .highlight {
-      color: rgb(233, 43, 43);
-      font-weight: bold;
-    }
-  
-    .activiteit {
-      margin-bottom: 10px;
-      width: 50%;
-      margin-top: 5px;
-      margin-bottom: 10px;
-    }
-  
-    .locatie {
-      width: 100%;
-    }
-  
-    .data {
-      display: block;
-    }
-  
-    @media screen and (max-width: 450px) {
-      .info {
-        width: 100%;
-      }
-  
-      .highlight,
-      .data {
-        display: block;
-        width: 100%;
-      }
-    }
-  
-    @media screen and (min-width: 451px) {
-      .data {
-        display: inline;
-      }
-    }
-</style>
-  
-<Header/>
-
-<ul>
-    {#each data.post as { datum, begin, einde, activiteit, locatie }}
-    <li>
-      <p class="info">
-        <span class="highlight">Datum: </span>
-        <span class="data">{datum}</span>
-      </p>
-      <p class="info">
-        <span class="highlight">Begin: </span>
-        <span class="data">{begin}</span>
-      </p>
-      <p class="info">
-        <span class="highlight">Einde: </span>
-        <span class="data">{einde}</span>
-      </p>
-      <p class="activiteit">Activiteit: {activiteit}</p>
-      <p class="locatie">Locatie: {locatie}</p>
-    </li>
-    {/each}
+<h1 class="self-center text-2xl font-semibold whitespace-nowrap dark:text-greenKLJ text-center mt-5">Hoofdleiding</h1>
+<ul class="list-none p-0  m-5">
+  {#each data.post as { datum, begin, einde, activiteit, locatie }}
+  <li class="mb-5 p-2 rounded flex flex-wrap border-2 border-greenKLJ">
+    <p class="m-3 text-base text-black">
+      <span class="text-red-600 font-bold">Datum: </span>
+      <span class="block">{datum}</span>
+    </p>
+    <p class="m-3 text-base text-black">
+      <span class="text-red-600 font-bold">Begin: </span>
+      <span class="block">{begin}</span>
+    </p>
+    <p class="m-3 text-base text-black">
+      <span class="text-red-600 font-bold">Einde: </span>
+      <span class="block">{einde}</span>
+    </p>
+    <p class="m-3">Activiteit: {activiteit}</p>
+    <p class="w-full ml-3">Locatie: {locatie}</p>
+  </li>
+  {/each}
 </ul>
-  
-<Footer/>

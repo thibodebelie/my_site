@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import Footer from './../../components/footer.svelte';
-	import Header from './../../components/header.svelte';
+
     import { goto } from '$app/navigation';
     /** @type {import('./$types').PageData} */
     export let data;
@@ -31,7 +30,7 @@
             body: formData
         })
     }
-
+/*
     const isLeider = data.user.user_metadata.leider 
     console.log(isLeider == "false")
     onMount(() =>{
@@ -49,7 +48,7 @@
     
 </script>
 
-<Header/>
+
 <br/><br/><br/><br/><br/>
 <form >
     <input type="date"  name="datum"        placeholder="Datum"         bind:value={datumInput}> <br/> <br/>
@@ -66,5 +65,4 @@
     <button on:click={() =>addData()}>Activiteit Toevoegen</button> <br/>
 </form>
 <br/><br/><br/><br/><br/>
-<Footer/>
 

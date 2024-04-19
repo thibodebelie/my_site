@@ -5,25 +5,27 @@
     console.log(data.user)
 </script>
 
+<!-- 
 <link rel="stylesheet" href="src\routes\home\home.css">
-
-<div class="wrapper">
-    <article class="img-info">
-    <h1>Een KLJ waar pit in zit!</h1>
-    <p class="welkom"><b>Welkom op onze website!</b> <br></p>
-    <p>Hallo! <br>
+-->
+<br>
+<div class="flex items-center mb-10">
+    <article class="bg-greenNav rounded-l m-4 mr-0 flex-grow h-full">
+    <h1 class="text-redKLJ text-3xl">Een KLJ waar pit in zit!</h1>
+    <p class="text-greenKLJ p-2"><b>Welkom op onze website!</b> <br></p>
+    <p class="p-2">Hallo! <br>
         Hier geven we kort, maar krachtig weer hoe ons KLJ-jaar eruit ziet.
         Je kan hier terecht voor onze maanduitnodiging, onze contactgegevens, de jaarplanning en nog zoveel meer!
         Als je nog vragen of opmerkingen hebt, kan je altijd de leiding contacteren. 
         De gegevens zijn ook op de website te vinden. 
     </p>
     </article>    
-    <img class="groepsfoto" src="src\images\Groepsfoto.jpg" alt="groepsfoto" style="width: 80%;">
+    <img class="w-1/4 rounded-2xl mr-3" src="src\images\Groepsfoto.jpg" alt="groepsfoto" style="width: 80%;">
 </div>
 
 
-<div class="extraInfo">
-    <h1> Wie zijn we ?</h1>
+<div class="bg-greenNav rounded-l m-4 p-3 flex flex-col items-center">
+    <h1 class="text-redKLJ text-3xl pb-2"> Wie zijn we ?</h1>
     <p> Wij zijn een superleuke en levendige jeugdbeweging voor meisjes vanaf 6 jaar totdat ze oud genoeg zijn om onze leidingsgroep te versterken. 
         De leiding voorziet elke week een activiteit voor haar groep op het jeugdheem. 
         Ons activiteitenaanbod varieert van pleinspelen tot tochten, wandelen, zwemmen, een quiz spelen, kookactiviteiten, ruige spelen, 
@@ -40,7 +42,7 @@
             Leden kunnen er dan voor kiezen om al een beetje te proeven van het leidingsleven en 
             kunnen ondertussen ook nog meedoen met de activiteiten.
     </p>
-    <img class="extraFoto" src="src\images\extraInfo.jpg" alt="extraFoto" style="width: 80%;">
+    <img class="pt-3 rounded-xl mt-2 max-w-lg" src="src\images\extraInfo.jpg" alt="extraFoto" >
 
 </div>
 <br>
