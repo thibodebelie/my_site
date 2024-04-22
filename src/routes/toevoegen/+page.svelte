@@ -1,6 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
-
     import { goto } from '$app/navigation';
     /** @type {import('./$types').PageData} */
     export let data;
@@ -38,13 +36,7 @@
             goto("/login")
         }
     })
-
-    /*
-        Path uit page halen
-        
-    */
-    
-    
+*/  
     
 </script>
 

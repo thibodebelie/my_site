@@ -5,8 +5,6 @@ export async function load({ params , locals: { supabase }}) {
     return {};
 };
 
-
-
 async function addData(){
     const { data, error } = await supabase
         .from('activiteiten')

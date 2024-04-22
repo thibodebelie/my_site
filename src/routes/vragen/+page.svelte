@@ -1,9 +1,8 @@
 <script>
-	import Footer from './../../components/footer.svelte';
-	import Header from './../../components/header.svelte';
     export let data;
 
     let providedId =""
+
 
     async function deleteVraag() {
         let formData = new FormData();
@@ -179,8 +178,6 @@ p {
 </style>
   
 
-<Header/>
-
 <div class="verwijder"> 
     <p class="text">Verwijder één van de onderstaande vragen aan de hand van de id.</p>
     <div class="input-group">
@@ -193,12 +190,9 @@ p {
 <ul>
 {#each data.post as {id,naam,voornaam,email, bericht , nummer}}
      <li>
-
-
         <p class="info">
             <span class="highlight">Id: </span>
-            <span class="data">{id}: </span> <br>
-            
+            <span class="data">{id}: </span> <br> 
         </p>
         <p class="info">
             <span class="highlight">Naam: </span>
@@ -220,11 +214,8 @@ p {
             <span class="highlight">Bericht:</span>
             <span class="data">{bericht}</span> 
         </p>
-
-
      </li>
 {/each}
 </ul>
 
 
-<Footer/>

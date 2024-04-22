@@ -9,28 +9,34 @@
     groupedData[item.groep].push(item);
   });
 
-  async function deleteVraag(id) {
-        const { error } = await supabase.from("activiteiten").delete().eq("id", id);
-        if (error) {
-            console.error("Error deleting data:", error);
-        } else {
-            console.log("Data deleted successfully!");
-            window.alert("De activiteit is met succes verwijderd.")
+  async function deleteVraag() {
+        let formData = new FormData();
+        formData.append( "id" , providedId);
+        const response = await fetch ("?/deleteVraag" , {
+            method:"POST",
+            body: formData
+        })
+
+        if (response.ok){
+            location.reload();
+
         }
-        window.location.reload();
+        
     }
     let providedId =""
 
 </script>
 
-
-<div class="verwijder"> 
-  <p class="text">Verwijder één van de onderstaande activiteiten aan de hand van de id.</p>
-  <div class="input-group">
-      <input type="number" bind:value={providedId} placeholder="Voer de id van de activiteit in." />
-      <button on:click={() => deleteVraag(providedId)}><span>Verwijder</span></button>
+<div class="flex flex-col items-center justify-center p-4 p"> 
+  <p class="pb-3">Verwijder één van de onderstaande activiteiten aan de hand van de id.</p>
+  <div class="flex flex-col items-center space-y-4">
+      <input type="number" bind:value={providedId} placeholder="Id van de activiteit" 
+        class="bg-gray-50 border border-gray-300 text-white text-center text-sm rounded-lg w-full p-2.5 dark:bg-greenNav dark:placeholder-white" />
+      <button on:click={() => deleteVraag(providedId)}
+        class="text-greenNav hover:text-white border border-greenNav hover:bg-greenNav  font-medium rounded-lg text-sm px-5 py-2 text-center me-2 mb-2 dark:border-greenNav dark:text-greenNav dark:hover:text-white dark:hover:bg-greenNav items-center"><span>Verwijder</span></button>
   </div>
 </div>
+
 
 {#each Object.keys(groupedData) as groep}
   <h2 class="text-3xl text-redKLJ font-bold ml-4 text-center">{groep}</h2>

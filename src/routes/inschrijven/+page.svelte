@@ -1,11 +1,31 @@
 <script>
-	import { supabase } from '$lib/supabaseClient';
 	import Footer from './../../components/footer.svelte';
 	import Header from './../../components/header.svelte';
     /** @type {import('./$types').PageData} */
     export let data;
 
     let kampData = "Kamp 2023"
+
+    let naamInput =""
+    let voornaamInput =""
+    let telefoonnummerInput =""
+    let groepInput =""
+    let pdfInput =""
+
+
+    async function addData(){
+        let formData = new FormData();
+        formData.append("naam",naamInput);
+        formData.append("voornaam",voornaamInput);
+        formData.append("nummer",telefoonnummerInput);
+        formData.append("groep",groepInput);
+        formData.append("pdf",pdfInput);
+
+        const responce = await fetch("?/addData",{
+            method: "POST",
+            body: formData
+        })
+    }
 </script>
 <style>
 h1{
@@ -70,20 +90,22 @@ button:hover span {
 <Header/>
 <h1> Inschrijvingsformulier <span>{kampData}</span>!</h1>
 
-<input type="text" name="" id="" placeholder="Naam">
-<input type="text" name="" id="" placeholder="Voornaam">
-<input type="text" name="" id="" placeholder="Telefoonnummer">
-<select>
+<input type="text" name="naam" placeholder="Naam" bind:value={naamInput}>
+<input type="text" name="voornaam"  placeholder="Voornaam" bind:value={voornaamInput}>
+<input type="text" name="telefoonnummer"  placeholder="Telefoonnummer" bind:value={telefoonnummerInput}>
+<select bind:value={groepInput}>
     <option value="Mini-Min">Mini-Min</option>
     <option value="Maxi-Min">Maxi-Min</option>
     <option value="Tussers">Tussers</option>
     <option value="Hoofdleiding">Hoofdleiding</option>
 </select>
 
-<input type="file" name="" id="" placeholder="Upload pdf medische fiche" accept=".pdf"><br>
+<input type="file" name="pdf" placeholder="Upload pdf medische fiche" accept=".pdf" bind:value={pdfInput}><br>
 <br><br>
+<button on:click={() =>addData()}>Activiteit Toevoegen</button> <br/>
+<br><br><br>
 
-<button>
+<button on:click={() =>addData()}>
     <svg
     height="24"
     width="24"
@@ -94,7 +116,7 @@ button:hover span {
       fill="currentColor"
     ></path>
   </svg>
-  <span>Inschrijven voor het onvergetelijke kamp</span>
+<span>Inschrijven voor het onvergetelijke kamp</span>
 
 </button>
 

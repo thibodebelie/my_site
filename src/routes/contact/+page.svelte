@@ -1,6 +1,4 @@
 <script>
-	import Footer from './../../components/footer.svelte';
-	import Header from './../../components/header.svelte';
     /** @type {import('./$types').PageData} */
     export let data;
 
@@ -11,35 +9,25 @@
     let berichtInput=""
     let nummerInput=""
     
-/*
-    const handleSubmit = async ()=> {
-        event.preventDefault();
+    async function addData(){
+        let formData = new FormData();
+        formData.append("naam",naamInput);
+        formData.append("voornaam",voornaamInput);
+        formData.append("email",emailInput);
+        formData.append("bericht",berichtInput);
+        formData.append("nummer",nummerInput);
 
-        const {data , error} = await supabase.from("contact").insert([
-            {   
-                naam: naamInput,
-                voornaam: voornaamInput,
-                email: emailInput,
-                bericht: berichtInput,
-                nummer: nummerInput 
-            }]);
-            if (error) {
-            console.error("Error inserting data:", error);
-            } else {
-            console.log("Data inserted successfully:", data);
-            window.alert("Het contactformulier werd succesfol ingediend!")
-            }    
-    } 
-*/
+        const responce = await fetch("?/addData",{
+            method: "POST",
+            body: formData
+        })
+    }
 
 </script>
 
-<link rel="stylesheet" href="src\routes\contact\style.css">
-
-<Header/>
-<div class="contactForm">
-    <div class="contact"><b>CONTACT US</b></div>
-    <div class="explenation"> Heb je een vraag? Wil je graag iets weten? Of ben je gewoon nieuwsgierig? <br>
+<div class=" text-gray-700 ml-24">
+    <div class="text-2xl text-redKLJ"><b>CONTACT US</b></div>
+    <div class="text-base"> Heb je een vraag? Wil je graag iets weten? Of ben je gewoon nieuwsgierig? <br>
         Stuur dan zeker een berichtje naar ons <a href="mailto:kljmeisjeshamont@gmail.com">e-mailadres</a>!
         Of vul onderstaande form in. 
         <p>Indien je wenst is het mogelijk om telefonisch contact op te nemen met de hoofdleiding.</p>
@@ -48,23 +36,23 @@
             <b>Jelke Palmans</b>: +32 496 13 20 86
         </div>
     </div>
-    <br><br><br><br>
-    <form on:submit|preventDefault={handleSubmit} action=""> 
-        Naam: <br/>
-        <input type="text" name="naam" class="input" bind:value={naamInput}> <br/>
-        Voornaam: <br/>
-        <input type="text" name="voornaam"     class="input" bind:value={voornaamInput}> <br/>
-        Email: <br/>
-        <input type="email" name="email" class="input" bind:value={emailInput}> <br/>
-        Nummer: <br>
-        <input type="int" name="nummer" class="input" bind:value={nummerInput}> <br>
-        Bericht: <br/>
-        <textarea  type="text" name="bericht"  class="input" bind:value={berichtInput} cols="30" rows="10"></textarea> <br/><br/>          
-        
-        <button type="submit">Submit</button>
+     
+    <form  class="flex flex-col space-y-4 w-4/5 mt-12"> 
+        <label for="naam" class="font-bold">Naam:</label>
+        <input type="text" name="naam" id="naam" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={naamInput}>
+    
+        <label for="voornaam" class="font-bold">Voornaam:</label>
+        <input type="text" name="voornaam" id="voornaam" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={voornaamInput}>
+    
+        <label for="email" class="font-bold">Email:</label>
+        <input type="email" name="email" id="email" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={emailInput}>
+    
+        <label for="nummer" class="font-bold">Nummer:</label>
+        <input type="text" name="nummer" id="nummer" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={nummerInput}>
+    
+        <label for="bericht" class="font-bold">Bericht:</label>
+        <textarea type="text" name="bericht" id="bericht" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={berichtInput} cols="30" rows="10"></textarea>
+    
+        <button on:click={() =>addData()} type="submit" class="bg-greenNav  text-white hover:text-redKLJ hover:bg-greenKLJ font-bold py-2 px-4 rounded pr-5">Submit</button>
     </form>
 </div>
-
-
-
-<Footer/>

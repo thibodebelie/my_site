@@ -4,7 +4,7 @@
     let datum = "2 t.e.m 8 juli"
     let datumOuder = "2 t.e.m 11 juli"
     let thema = " 'Naar de ruimte' "
-    let datumBekend = "Belangrijke datum: 28 mei"
+    let datumBekend = "Belangrijke datum: 19 mei"
 </script>
 
 <style>
