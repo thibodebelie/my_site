@@ -23,199 +23,60 @@
 
 </script>
 
-<style>
-button {
- outline: none;
- cursor: pointer;
- border: none;
- padding: 0.9rem 2rem;
- margin: 0;
- font-family: inherit;
- font-size: inherit;
- position: relative;
- display: inline-block;
- letter-spacing: 0.05rem;
- font-weight: 700;
- font-size: 17px;
- border-radius: 500px;
- overflow: hidden;
- background: #38AD34;
- color: ghostwhite;
-}
-
-button span {
- position: relative;
- z-index: 10;
- transition: color 0.4s;
-}
-
-button:hover span {
- color: rgb(223,43,43);
- font-size:bold;
-}
-
-button::before,
-button::after {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- z-index: 0;
-}
-
-button::before {
- content: "";
- background: #000;
- width: 120%;
- left: -10%;
- transform: skew(30deg);
- transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
-}
-
-button:hover::before {
- transform: translate3d(100%, 0, 0);
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-  
-li {
-    margin-bottom: 20px;
-    border: 1px solid #38AD34;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    flex-wrap: wrap;
-}
-    
-.verwijder {
-    margin-bottom: 20px;
-    border: 1px solid #38AD34;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-
-}
-
-.verwijder .text {
-    width: 100%;
-    margin-bottom: 10px;
-    color: rgb(223,43,43);
-    font-weight: bold;
-    text-align: center;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    width: 100%; 
-}
-
-input[type="number"] {
-    margin-bottom: 10px;
-    width: 10%;
-    min-width: 160px; 
-}
-  
-.info {
-    width: calc(100% / 3);
-}
-  
-p {
-    margin: 0;
-    font-size: 16px;
-    color: black;
-}
-  
-.activiteit {
-    margin-bottom: 10px;
-}
-  
-.highlight {
-    color: rgb(233, 43, 43);
-    font-weight: bold;
-}
-  
-.activiteit {
-    margin-bottom: 10px;
-    width: 50%;
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-  
-.locatie {
-    width: 100%;
-}
-  
-.data {
-    display: block;
-}
-  
-@media screen and (max-width: 450px) {
-    .info {
-        width: 100%;
-    }
-  
-    .highlight,
-    .data {
-        display: block;
-        width: 100%;
-    }
-}
-  
-@media screen and (min-width: 451px) {
-    .data {
-        display: inline;
-    }
-}
-</style>
-  
-
-<div class="verwijder"> 
-    <p class="text">Verwijder één van de onderstaande vragen aan de hand van de id.</p>
-    <div class="input-group">
-        <input type="number" bind:value={providedId} placeholder="Voer de id van de vraag in." />
-        <button on:click={() => deleteVraag(providedId)}><span>Verwijder</span></button>
+ 
+<div class="felx flex-col items-center justify-center p-4"> 
+    <h1 class="text-xl font-bold text-greenNav text-center m-6 border border-redKLJ rounded-md pb-3 pt-3 mt-0">Verwijder één van de onderstaande vragen aan de hand van de id.</h1>
+    <div class="flex flex-col items-center space-y-4">
+        <input type="number" bind:value={providedId} placeholder="Voer de id van de vraag in." class="bg-gray-50 border border-gray-300 text-white text-center text-sm rounded-lg w-full p-2.5 dark:bg-greenNav dark:placeholder-white" />
+        
+        <a href="#" on:click={() => deleteVraag(providedId)} class="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-redKLJ rounded-full shadow-md group">
+            <span class="absolute inset-0 flex items-center justify-center w-full h-full text-redKLJ duration-300 -translate-x-full bg-greenNav group-hover:translate-x-0 ease">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </span>
+            <span class="absolute flex items-center justify-center w-full h-full text-redKLJ transition-all duration-300 transform group-hover:translate-x-full ease">Verwijder</span>
+            <span class="relative invisible">Verwijder</span>
+        </a>      
     </div>
 </div>
 
+<ul class="border-4 border-greenKLJ rounded-lg m-4 p-4">
+    {#each data.post as {id, naam, voornaam, email, bericht, nummer}}
+      <li class="mb-5 p-2 rounded-md flex flex-wrap border-2 border-greenKLJ">
+        <div class="w-full flex flex-col items-center">
+          <div class="flex flex-wrap">
+            <p class="m-3 text-base text-black">
+              <span class="text-redKLJ font-semibold">Id:</span>
+              <span class="data">{id}</span>
+            </p>
+            <p class="m-3 text-base text-black">
+              <span class="text-redKLJ font-semibold">Naam:</span>
+              <span class="data">{naam}</span>
+            </p>
+            <p class="m-3 text-base text-black">
+              <span class="text-redKLJ font-semibold">Voornaam:</span>
+              <span class="data">{voornaam}</span>
+            </p>
+          </div>
+          <div class="flex flex-wrap">
+            <p class="m-3 text-base text-black">
+              <span class="text-redKLJ font-semibold">E-mail:</span>
+              <span class="data">{email}</span>
+            </p>
+            <p class="m-3 text-base text-black">
+              <span class="text-redKLJ font-semibold">Nummer:</span>
+              <span class="data">{nummer}</span>
+            </p>
+          </div>
+        </div>
+        <p class="m-1 border-2 rounded-md pl-1 p-2 border-greenKLJ">Bericht: {bericht}</p>
+      </li>
+    {/each}
+  </ul>
+  
+  
+       
+  
 
-<ul>
-{#each data.post as {id,naam,voornaam,email, bericht , nummer}}
-     <li>
-        <p class="info">
-            <span class="highlight">Id: </span>
-            <span class="data">{id}: </span> <br> 
-        </p>
-        <p class="info">
-            <span class="highlight">Naam: </span>
-            <span class="data">{naam}: </span>
-        </p>
-        <p class="info">
-            <span class="highlight" >Vooraam: </span>
-            <span class="data">{voornaam}</span>
-        </p>
-        <p class="info">
-            <span class="highlight">E-mail: </span>
-            <span class="data">{email}</span>
-        </p>
-        <p class="info">
-            <span class="highlight">Nummer: </span>
-            <span class="data">{nummer}</span>
-        </p>
-        <p class="info">
-            <span class="highlight">Bericht:</span>
-            <span class="data">{bericht}</span> 
-        </p>
-     </li>
-{/each}
-</ul>
+
 
 

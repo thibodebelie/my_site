@@ -1,6 +1,6 @@
 
 
-<footer class="bg-white dark:bg-greenNav">
+<footer class="bg-greenNav">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
@@ -56,12 +56,12 @@
                     </svg>
                   <span class="sr-only">Facebook page</span>
               </a>
-              <a href="#" class="text-gray-500  dark:hover:text-greenKLJ ms-5">
+              <a href="https://www.instagram.com/klj_meisjes_hamont/" class="text-gray-500  dark:hover:text-greenKLJ ms-5">
                 <svg width="20" height="18" fill="currentColor"  viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-instagram"><path d='M14.017 0h-8.07A5.954 5.954 0 0 0 0 5.948v8.07a5.954 5.954 0 0 0 5.948 5.947h8.07a5.954 5.954 0 0 0 5.947-5.948v-8.07A5.954 5.954 0 0 0 14.017 0zm3.94 14.017a3.94 3.94 0 0 1-3.94 3.94h-8.07a3.94 3.94 0 0 1-3.939-3.94v-8.07a3.94 3.94 0 0 1 3.94-3.939h8.07a3.94 3.94 0 0 1 3.939 3.94v8.07z'/><path d='M9.982 4.819A5.17 5.17 0 0 0 4.82 9.982a5.17 5.17 0 0 0 5.163 5.164 5.17 5.17 0 0 0 5.164-5.164A5.17 5.17 0 0 0 9.982 4.82zm0 8.319a3.155 3.155 0 1 1 0-6.31 3.155 3.155 0 0 1 0 6.31z'/>
                     <circle cx='15.156' cy='4.858' r='1.237'/></svg>
                   <span class="sr-only">Instagram</span>
               </a>
-              <a href="#" class="text-gray-500  dark:hover:text-greenKLJ ms-5">
+              <a href="https://www.klj.be/" class="text-gray-500  dark:hover:text-greenKLJ ms-5">
                 <svg fill="currentColor" width="20" height="18px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon line-color">
                     <polygon id="primary" points="19 11 19 21 14 21 14 14 10 14 10 21 5 21 5 11 3 11 12 2 21 11 19 11" style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></polygon></svg>
                   <span class="sr-only">Twitter page</span>

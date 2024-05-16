@@ -23,6 +23,32 @@
         })
     }
 
+    function validateForm() {
+    const messages = [];
+
+    if (!naamInput) {
+        messages.push("Gelieve de naam in te vullen.");
+    }
+    if (!voornaamInput) {
+        messages.push("Gelieve de voornaam in te vullen.");
+    }
+    if (!emailInput) {
+        messages.push("Gelieve het E-mailadres in te vullen.");
+    }
+    if (!berichtInput) {
+        messages.push("Gelieve de vraag te vermelden.");
+    }
+    if (!nummerInput) {
+        messages.push("Gelieve de telefoonnummer in te vullen.");
+    }
+
+    if (messages.length > 0) {
+        alert(messages.join("\n"));
+        return false;
+    }
+    return true;
+}
+
 </script>
 
 <div class=" text-gray-700 ml-24">
@@ -37,22 +63,24 @@
         </div>
     </div>
      
-    <form  class="flex flex-col space-y-4 w-4/5 mt-12"> 
+    <form  class="flex flex-col space-y-4 w-4/5 mt-12 mb-10"> 
         <label for="naam" class="font-bold">Naam:</label>
-        <input type="text" name="naam" id="naam" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={naamInput}>
+        <input type="text" name="naam" id="naam" pattern="[a-zA-Z ]+" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={naamInput}>
     
         <label for="voornaam" class="font-bold">Voornaam:</label>
-        <input type="text" name="voornaam" id="voornaam" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={voornaamInput}>
+        <input type="text" name="voornaam" id="voornaam" pattern="[a-zA-Z ]+" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={voornaamInput}>
     
         <label for="email" class="font-bold">Email:</label>
-        <input type="email" name="email" id="email" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={emailInput}>
+        <input type="email" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={emailInput}>
     
         <label for="nummer" class="font-bold">Nummer:</label>
-        <input type="text" name="nummer" id="nummer" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={nummerInput}>
+        <input type="text" name="nummer" id="nummer" pattern="[0-9]+" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={nummerInput}>
     
         <label for="bericht" class="font-bold">Bericht:</label>
-        <textarea type="text" name="bericht" id="bericht" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={berichtInput} cols="30" rows="10"></textarea>
+        <textarea type="text" name="bericht" id="bericht" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]" class="input border-2 border-gray-300 p-2 rounded-md" bind:value={berichtInput} cols="30" rows="10"></textarea>
     
-        <button on:click={() =>addData()} type="submit" class="bg-greenNav  text-white hover:text-redKLJ hover:bg-greenKLJ font-bold py-2 px-4 rounded pr-5">Submit</button>
+        <button on:click={() => addData()} on:click={()=>validateForm()} type="submit" class="bg-greenNav text-white hover:text-redKLJ hover:bg-greenKLJ font-bold py-2 px-4 rounded pr-5 group">
+            <span class="animate-caret ">Submit</span>
+        </button>    
     </form>
 </div>

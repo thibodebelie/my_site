@@ -21,7 +21,6 @@
             location.reload();
 
         }
-        
     }
     let providedId =""
 
@@ -31,7 +30,7 @@
   <p class="pb-3">Verwijder één van de onderstaande activiteiten aan de hand van de id.</p>
   <div class="flex flex-col items-center space-y-4">
       <input type="number" bind:value={providedId} placeholder="Id van de activiteit" 
-        class="bg-gray-50 border border-gray-300 text-white text-center text-sm rounded-lg w-full p-2.5 dark:bg-greenNav dark:placeholder-white" />
+        class=" border border-gray-300 text-white text-center text-sm rounded-lg w-full p-2.5 bg-greenNav placeholder-white" />
       <button on:click={() => deleteVraag(providedId)}
         class="text-greenNav hover:text-white border border-greenNav hover:bg-greenNav  font-medium rounded-lg text-sm px-5 py-2 text-center me-2 mb-2 dark:border-greenNav dark:text-greenNav dark:hover:text-white dark:hover:bg-greenNav items-center"><span>Verwijder</span></button>
   </div>

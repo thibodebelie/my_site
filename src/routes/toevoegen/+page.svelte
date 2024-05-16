@@ -28,33 +28,63 @@
             body: formData
         })
     }
-/*
-    const isLeider = data.user.user_metadata.leider 
-    console.log(isLeider == "false")
-    onMount(() =>{
-        if(isLeider == "false"){
-            goto("/login")
-        }
-    })
-*/  
+    function validateForm() {
+    const messages = [];
+
+    if (!datumInput) {
+        messages.push("Gelieve de datum in te vullen.");
+    }
+    if (!beginInput) {
+        messages.push("Gelieve het beginuur in te vullen.");
+    }
+    if (!eindeInput) {
+        messages.push("Gelieve het einduur in te vullen.");
+    }
+    if (!activiteitInput) {
+        messages.push("Gelieve de beschrijving van de activiteit te vermelden.");
+    }
+    if (!locatieInput) {
+        messages.push("Gelieve de locatie in te vullen.");
+    }
+    if(!groepInput){
+        messages.push("Gelieve de correcte groep mee te geven!")
+    }
+
+    if (messages.length > 0) {
+        alert(messages.join("\n"));
+        return false;
+    }
+    return true;
+}
+
+    //const isLeider = data.user.user_metadata.leider 
+    //console.log(data.user.user_metadata);
+    
+    // console.log(isLeider == "false")
+    // onMount(() =>{
+    //     if(isLeider == "false"){
+    //         goto("/login")
+    //     }
+    // })  
     
 </script>
 
 
-<br/><br/><br/><br/><br/>
+<div class="flex flex-col items-center justify-center mb-32 mt-10">
+    <h1 class="text-redKLJ text-2xl font-semibold mb-3">Toevoegen van een activiteit</h1>
 <form >
-    <input type="date"  name="datum"        placeholder="Datum"         bind:value={datumInput}> <br/> <br/>
-    <input type="time"  name="begin"        placeholder="Beginuur"      bind:value={beginInput}>
-    <input type="time"  name="einde"        placeholder="Einduur"       bind:value={eindeInput}> <br/>
-    <input type="text"  name="activiteit"   placeholder="Activiteit"    bind:value={activiteitInput}> <br/>
-    <input type="text"  name="locatie"      placeholder="Locatie"       bind:value={locatieInput}>
-    <select bind:value={groepInput}>
+    <input type="date"  name="datum"        placeholder="Datum"         bind:value={datumInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">
+    <input type="time"  name="begin"        placeholder="Beginuur"      bind:value={beginInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">
+    <input type="time"  name="einde"        placeholder="Einduur"       bind:value={eindeInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">
+    <input type="text"  name="activiteit"   placeholder="Activiteit"    bind:value={activiteitInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">
+    <input type="text"  name="locatie"      placeholder="Locatie"       bind:value={locatieInput} class="w-10/12 items-center px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white ml-4">
+    <select bind:value={groepInput} class="w-10/12 px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white mb-5 ml-4">
         <option value="Mini-Min">Mini-Min</option>
         <option value="Maxi-Min">Maxi-Min</option>
         <option value="Tussers">Tussers</option>
         <option value="Hoofdleiding">Hoofdleiding</option>
     </select>
-    <button on:click={() =>addData()}>Activiteit Toevoegen</button> <br/>
+    <button on:click={() =>addData()} on:click={()=>validateForm()} class="w-10/12 border border-redKLJ rounded-md bg-greenNav p-4 hover:border-black mb-5 ml-4">Activiteit Toevoegen</button> <br/>
 </form>
-<br/><br/><br/><br/><br/>
+</div>
 

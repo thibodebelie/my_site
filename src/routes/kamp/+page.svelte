@@ -3,7 +3,7 @@
     export let data;
     let datum = "2 t.e.m 8 juli"
     let datumOuder = "2 t.e.m 11 juli"
-    let thema = " 'Naar de ruimte' "
+    let thema = " 'KLJ kasteel' "
     let datumBekend = "Belangrijke datum: 19 mei"
 </script>
 
