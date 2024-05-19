@@ -66,15 +66,6 @@
     }
     });
 
-    //console.log(data.user.user_metadata.leider);
-    
-    // console.log(isLeider == "false")
-    // onMount(() =>{
-    //     if(isLeider == "false"){
-    //         goto("/login")
-    //     }
-    // })  
-    
 </script>
 
 
