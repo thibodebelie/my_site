@@ -1,23 +1,33 @@
 <script>
-    export let data;
+  import { goto } from '$app/navigation';
+  import {onMount} from 'svelte';
+  export let data;
 
-    let providedId =""
+  let providedId =""
 
 
-    async function deleteVraag() {
-        let formData = new FormData();
-        formData.append( "id" , providedId);
-        const response = await fetch ("?/deleteVraag" , {
-            method:"POST",
-            body: formData
-        })
+  async function deleteVraag() {
+      let formData = new FormData();
+      formData.append( "id" , providedId);
+      const response = await fetch ("?/deleteVraag" , {
+          method:"POST",
+          body: formData
+      })
 
-        if (response.ok){
-            location.reload();
+      if (response.ok){
+          location.reload();
 
-        }
-        
-    }
+      }
+      
+  }
+
+  const isLeider = data?.user?.user_metadata?.leider === 'true';
+  console.log(isLeider);
+  onMount(() => {
+  if (!isLeider) {
+    goto("./login");
+  }
+  });
 
 
 

@@ -1,5 +1,6 @@
 <script>
     import { goto } from '$app/navigation';
+    import {onMount} from 'svelte';
     /** @type {import('./$types').PageData} */
     export let data;
     
@@ -57,8 +58,15 @@
     return true;
 }
 
-    //const isLeider = data.user.user_metadata.leider 
-    //console.log(data.user.user_metadata);
+    const isLeider = data?.user?.user_metadata?.leider === 'true';
+    console.log(isLeider);
+    onMount(() => {
+    if (!isLeider) {
+      goto("./login");
+    }
+    });
+
+    //console.log(data.user.user_metadata.leider);
     
     // console.log(isLeider == "false")
     // onMount(() =>{

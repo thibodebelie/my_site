@@ -1,4 +1,6 @@
 <script>
+    import { goto } from '$app/navigation';
+    import {onMount} from 'svelte';
     /** @type {import('./$types').PageData} */
     export let data;
 
@@ -49,7 +51,15 @@
         return false;
     }
     return true;
+
+    
 }
+    const isLid = data?.user?.user_metadata?.leider === 'false';
+    onMount(() => {
+    if (!isLid) {
+        goto("./login");
+    }
+    });
 </script>
 
 

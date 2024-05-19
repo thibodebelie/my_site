@@ -7,6 +7,7 @@ export const actions = {
         const last_name = formData.get("last_name");
         const email = formData.get("email");
         const password = formData.get("password");
+    
 
         const { data, error } = await supabase.auth.signUp({
             email: email,
