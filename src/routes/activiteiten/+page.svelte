@@ -1,4 +1,6 @@
 <script>  
+    import { goto } from '$app/navigation';
+    import {onMount} from 'svelte';
   export let data
 
   const groupedData = {};
@@ -23,6 +25,14 @@
         }
     }
     let providedId =""
+
+    const isLeider = data?.user?.user_metadata?.leider === 'true';
+    console.log(isLeider);
+    onMount(() => {
+    if (!isLeider) {
+      goto("./login");
+    }
+    });
 
 </script>
 

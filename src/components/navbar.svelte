@@ -1,11 +1,15 @@
 <!-- #A2AF9F-->
 <script>
+  
   import { onMount } from 'svelte';
   let isOpen = false;
 
   onMount(() => {
     import('https://cdn.skypack.dev/tailwindcss/tailwind.css');
   });
+
+
+
 </script>
 
 <nav class="border-gray-200 bg-greenNav">
@@ -41,11 +45,7 @@
                   <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Meer</a>
                   <ul class="absolute left-0 w-48 mt-0 space-y-2 bg-greenNav rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 invisible group-hover:visible">
                     <li><a href="../documenten" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Documenten</a></li>
-                    <li><a href="../activiteiten" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Activiteiten</a></li>
-                    <li><a href="../toevoegen" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Toevoegen</a></li>
-                    <li><a href="../vragen" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Vragen</a></li>
                     <li><a href="../logup" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Singup</a></li>
-                    <li><a href="../logout" on:click={() => isOpen = false} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-redKLJ">Logout</a></li>
                   </ul>
                 </li>
               </div>
@@ -77,11 +77,8 @@
             <a href="" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-redKLJ md:dark:hover:text-redKLJ dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Meer</a>
             <ul class="absolute left-0 w-48 mt-0 space-y-2 bg-greenNav text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 invisible group-hover:visible">
                 <li><a href="../documenten" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Documenten</a></li>
-                <li><a href="../activiteiten" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Activiteiten</a></li>
-                <li><a href="../toevoegen" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Toevoegen</a></li>
-                <li><a href="../vragen" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Vragen</a></li>
                 <li><a href="../logup" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Singup</a></li>
-                <li><a href="../logout" class="block px-4 py-2 hover:bg-gray-100 hover:text-redKLJ">Logout</a></li>
+
             </ul>
         </li>
 

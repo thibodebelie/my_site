@@ -1,4 +1,6 @@
+import { goto } from '$app/navigation';
 import { redirect } from '@sveltejs/kit';
+
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -11,13 +13,11 @@ export const actions = {
             email: email,
             password: password
           })
-        //   if(!error){
-        //       redirect(307, `home`)
-        //   }
-        //   else{
-        //     fail(400, {message: 'Foutief antwoord'});
-        //   }
-          redirect(307, `home`)
+          if (data) {
+            redirect(303,'/home');
+          } else {
+            console.error("Login error:", error);
+          }
     },
 
 };
