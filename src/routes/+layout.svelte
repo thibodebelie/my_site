@@ -4,26 +4,27 @@
 	import NavbarLogedIn from './../components/navbarLogedIn.svelte';
 	import NavbarLeiding from './../components/navbarLeiding.svelte'
     import "../app.css"
+	import { onMount } from 'svelte';
+
 
 	export let data;
-	
-
 	const isLogedin = data.user;
 	const isLeider = data?.user?.user_metadata?.leider;
 	
 </script>
 
-
-{#if isLogedin}
-	{#if isLeider == 'true'}
-		<NavbarLeiding/>
+<div>
+	{#if isLogedin}
+		{#if isLeider == 'true'}
+			<NavbarLeiding/>
+		{:else}
+			<NavbarLogedIn/>
+		{/if}
 	{:else}
-		<NavbarLogedIn/>
+		<Navbar/>
 	{/if}
-{:else}
-	<Navbar/>
-{/if}
-
+</div>
+	
 <slot/>
 
 <FooterNew/>

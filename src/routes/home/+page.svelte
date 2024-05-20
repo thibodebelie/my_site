@@ -1,19 +1,13 @@
 <script>
-	import { onMount } from 'svelte';
     /** @type {import('./$types').PageData} */
     export let data;
-    let key = 0;
-
-    onMount(() => {
-        key = Math.random();
-    });
-
+    
 </script>
 
 <!-- 
 <link rel="stylesheet" href="src\routes\home\home.css">
 -->
-<div key={key} class="flex flex-col items-center mb-10 sm:flex-row ">
+<div  class="flex flex-col items-center mb-10 sm:flex-row ">
     <article class="bg-greenNav rounded-l m-4 mr-0 flex-grow h-full relative before:absolute before:inset-0 before:bg-white before:animate-typewriter">
     <h1 class="text-redKLJ text-3xl">Een KLJ waar pit in zit!</h1>
     <p class="text-greenKLJ p-2"><b>Welkom op onze website!</b> <br></p>
