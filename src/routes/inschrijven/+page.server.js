@@ -1,3 +1,4 @@
+
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params , locals: { supabase }}) {
     const { data , error } = await supabase.from("kamp").select();
@@ -9,7 +10,7 @@ async function addData() {
     const { data, error } = await supabase
         .from('kamp')
         .insert([
-            { naam: 'naam', voornaam: 'voornaam', nummer: 'nummer', groep: 'groep', pdf: 'pdf' },
+            { naam: 'naam', voornaam: 'voornaam', nummer: 'nummer', groep: 'groep'},
         ])
         .select();
 }
@@ -23,15 +24,14 @@ export const actions = {
             const voornaam = formData.get('voornaam');
             const nummer = formData.get('nummer');
             const groep = formData.get('groep');
-            const pdf = formData.get('pdf');
         
-            if (!naam || !voornaam || !nummer || !groep || !pdf) {
+            if (!naam || !voornaam || !nummer || !groep) {
                 alert('Alle velden dienen ingevuld te worden!');
                 return;
             }
             
             const { error } = await supabase.from("kamp").insert([
-                { naam: naam, voornaam: voornaam, nummer: nummer, groep: groep, pdf: pdf },
+                { naam: naam, voornaam: voornaam, nummer: nummer, groep: groep },
             ]);
             
             if (error) {

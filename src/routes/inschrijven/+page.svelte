@@ -10,7 +10,6 @@
     let voornaamInput =""
     let telefoonnummerInput =""
     let groepInput =""
-    let pdfInput =""
 
 
     async function addData(){
@@ -19,12 +18,14 @@
         formData.append("voornaam",voornaamInput);
         formData.append("nummer",telefoonnummerInput);
         formData.append("groep",groepInput);
-        formData.append("pdf",pdfInput);
 
         const responce = await fetch("?/addData",{
             method: "POST",
-            body: formData
+            body: formData,
         })
+        if(responce.ok){
+            goto("./home")
+        }
     }
 
     function validateForm() {
@@ -41,9 +42,6 @@
     }
     if (!groepInput) {
         messages.push("Gelieve de groep in te vullen.");
-    }
-    if (!pdfInput) {
-        messages.push("Gelieve de pdf in te dienen.");
     }
 
     if (messages.length > 0) {
@@ -78,10 +76,7 @@
     </select>
 
 
-    <div class="px-3 py-2 mt-2 text-white border border-redKLJ rounded-md bg-greenNav placeholder-white mb-5">
-        <input type="file" name="pdf" accept=".pdf" bind:value={pdfInput} id="file-upload" class="hidden">
-        <label for="file-upload" class="cursor-pointer">Upload pdf medische fiche</label>
-    </div>
+    
 
     <button on:click={() => addData()} on:click={()=>validateForm()} class="border border-redKLJ rounded-md bg-greenNav p-4 hover:border-black mb-5">
         <span>Inschrijven voor het onvergetelijke kamp</span>
