@@ -67,6 +67,7 @@
         <p class="m-1 border-2 rounded-md pl-1 p-2  border-greenKLJ">Activiteit: {activiteit}</p>
         <p class="w-full m-3">Locatie: {locatie}</p>
         <p class="w-full ml-3">Id: {id}</p>
+        <a href="../edit" class="ml-3 pt-3 underline text-blue-700">Edit</a>
       </li>
     {/each}
   </ul>
