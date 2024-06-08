@@ -45,21 +45,24 @@
     }
 
     async function updateActiviteit(){
-        const {error} = await supabase.from(activiteiten)
-            .update({
-                datum: datumInput,
-                begin: beginInput,
-                einde: eindeInput,
-                activiteit: activiteitInput,
-                locatie: locatieInput,
-                groep: groepInput
-            }).eq('id' , idInput);
-        if (error){
-            console.error('Error bij het updaten van de activiteit, ', error);
-        }
-        else{
+        let formData = new FormData();
+        formData.append("datum",datumInput);
+        formData.append("begin",beginInput);
+        formData.append("einde",eindeInput);
+        formData.append("activiteit",activiteitInput);
+        formData.append("locatie",locatieInput);
+        formData.append("groep",groepInput);
+        formData.append("id",idInput)
+        
+        const response = await fetch("?/updateActiviteit",{
+            method: "POST",
+            body: formData
+        })
+
+        if (response.ok){
             goto("./activiteiten");
         }
+        
     }
     const isLeider = data?.user?.user_metadata?.leider === 'true';
     console.log(isLeider);
