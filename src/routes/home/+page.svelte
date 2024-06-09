@@ -4,9 +4,7 @@
     
 </script>
 
-<!-- 
-<link rel="stylesheet" href="src\routes\home\home.css">
--->
+
 <div  class="flex flex-col items-center mb-10 sm:flex-row ">
     <article class="bg-greenNav rounded-l m-4 mr-0 flex-grow h-full relative before:absolute before:inset-0 before:bg-white before:animate-typewriter">
     <h1 class="text-redKLJ text-3xl">Een KLJ waar pit in zit!</h1>

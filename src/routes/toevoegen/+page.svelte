@@ -5,7 +5,6 @@
     export let data;
     
     /** @type {import('./$types').ActionData} */
-    //export let form;
     let datumInput =""
     let beginInput = ""
     let eindeInput = ""

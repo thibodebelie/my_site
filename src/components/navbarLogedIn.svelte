@@ -1,4 +1,3 @@
-<!-- #A2AF9F-->
 <script>
   
     import { onMount } from 'svelte';
@@ -10,7 +9,7 @@
   
   
   
-  </script>
+</script>
   
   <nav class="border-gray-200 bg-greenNav">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">

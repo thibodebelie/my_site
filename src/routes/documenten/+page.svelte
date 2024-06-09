@@ -14,8 +14,7 @@
     <!-- svelte-ignore a11y-missing-attribute -->
     <object data="src\images\inschrijving.pdf" type="application/pdf" class="w-full sm:w-1/2 lg:w-1/3 h-96">
     </object>
-        <!-- svelte-ignore a11y-missing-attribute -->
-
+    <!-- svelte-ignore a11y-missing-attribute -->
     <object data="src\images\medische_fiche.pdf" type="application/pdf" class="w-full sm:w-1/2 lg:w-1/3 h-96 mb-10" >
     </object>
 

@@ -4,7 +4,6 @@
 	import NavbarLogedIn from './../components/navbarLogedIn.svelte';
 	import NavbarLeiding from './../components/navbarLeiding.svelte'
     import "../app.css"
-	import { onMount } from 'svelte';
 
 
 	export let data;
